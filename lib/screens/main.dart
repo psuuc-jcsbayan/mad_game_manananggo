@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../components/cactus.dart';
 import '../components/cloud.dart';
-import '../components/dino.dart';
+import '../components/character.dart';
 import '../components/bat.dart';
 import '../player_progress/persistence/local_storage_player_progress_persistence.dart';
 import '../settings/settings.dart';
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage>
   late AnimationController worldController;
   Duration lastUpdateCall = const Duration();
 
-  List<Cactus> cacti = [
+  List<Cactus> ch = [
     Cactus(worldLocation: const Offset(150, 0)),
     Cactus(worldLocation: const Offset(250, 0)),
     Cactus(worldLocation: const Offset(350, 0)),
@@ -158,7 +158,7 @@ class _MyHomePageState extends State<MyHomePage>
       dino.state = DinoState.running;
       dino.dispY = 0;
       worldController.reset();
-      cacti = [
+      ch = [
         Cactus(worldLocation: const Offset(70, 0)),
         Cactus(worldLocation: const Offset(150, 0)),
         Cactus(worldLocation: const Offset(250, 0)),
@@ -208,15 +208,15 @@ class _MyHomePageState extends State<MyHomePage>
       Size screenSize = MediaQuery.of(context).size;
 
       Rect dinoRect = dino.getRect(screenSize, runDistance);
-      for (Cactus cactus in cacti) {
+      for (Cactus cactus in ch) {
         Rect obstacleRect = cactus.getRect(screenSize, runDistance);
         if (dinoRect.overlaps(obstacleRect.deflate(20))) {
           _die();
         }
         if (obstacleRect.right < 0) {
           setState(() {
-            cacti.remove(cactus);
-            cacti.add(
+            ch.remove(cactus);
+            ch.add(
               Cactus(
                 worldLocation: Offset(
                   runDistance +
@@ -319,7 +319,7 @@ class _MyHomePageState extends State<MyHomePage>
     for (GameObject object in [
       ...clouds,
       ...ground,
-      ...cacti,
+      ...ch,
       ...ptera,
       dino
     ]) {

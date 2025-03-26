@@ -4,7 +4,7 @@ import 'constants.dart';
 import '../screens/game_object.dart';
 import 'sprite.dart';
 
-List<Sprite> cacti = [
+List<Sprite> ch = [
   Sprite()
     ..imagePath = "assets/images/cross.png"
     ..imageWidth = 47
@@ -41,7 +41,7 @@ class Cactus extends GameObject {
   final Offset worldLocation;
 
   Cactus({required this.worldLocation})
-      : sprite = cacti[Random().nextInt(cacti.length)];
+      : sprite = ch[Random().nextInt(ch.length)];
 
   @override
   Rect getRect(Size screenSize, double runDistance) {

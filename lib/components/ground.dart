@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-
 import 'constants.dart';
 import '../screens/game_object.dart';
 import 'sprite.dart';

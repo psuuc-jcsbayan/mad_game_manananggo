@@ -1,15 +1,9 @@
-// Copyright 2022, the Flutter project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 
 import 'persistence/local_storage_player_progress_persistence.dart';
 import 'persistence/player_progress_persistence.dart';
 
-/// Encapsulates the player's progress.
 class PlayerProgress extends ChangeNotifier {
   static const maxHighestScoresPerPlayer = 10;
 

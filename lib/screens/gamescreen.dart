@@ -10,7 +10,6 @@ import '../audio/sounds.dart';
 class EndlessRunnerGame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Set landscape orientation
      SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -58,11 +57,6 @@ class EndlessRunnerGame extends StatelessWidget {
                         backgroundColor: MaterialStatePropertyAll(Colors.transparent),
                       ),
                       onPressed: () {
-                        // SystemChrome.setPreferredOrientations([
-                        //   DeviceOrientation.portraitUp,
-                        //   DeviceOrientation.portraitDown,
-                        // ]);
-                        // Navigator.push(context, MaterialPageRoute(builder: (_)=>MainMenuScreen()));
                         GoRouter.of(context).pop();    
                          audioController.playSfx(SfxType.buttonTap);
                       },

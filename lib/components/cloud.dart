@@ -26,7 +26,7 @@ List<Sprite> cloudSprites = [
 
 class Cloud extends GameObject {
   final Offset worldLocation;
-  final Sprite sprite; // <-- Store ONE sprite!
+  final Sprite sprite;
 
   Cloud({required this.worldLocation})
       : sprite = cloudSprites[Random().nextInt(cloudSprites.length)]; // Random sprite
@@ -43,6 +43,6 @@ class Cloud extends GameObject {
 
   @override
   Widget render() {
-    return Image.asset(sprite.imagePath); // Use selected sprite
+    return Image.asset(sprite.imagePath);
   }
 }

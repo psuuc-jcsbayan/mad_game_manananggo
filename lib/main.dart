@@ -14,7 +14,6 @@ import 'settings/settings.dart';
 import 'style/palette.dart';
 
 void main() async {
-  // Basic logging setup.
   Logger.root.level = kDebugMode ? Level.FINE : Level.INFO;
   Logger.root.onRecord.listen((record) {
     dev.log(
@@ -26,9 +25,7 @@ void main() async {
   });
 
   WidgetsFlutterBinding.ensureInitialized();
-  // Put game into full screen mode on mobile devices.
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-  // Lock the game to portrait mode on mobile devices.
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -62,7 +59,6 @@ class MyApp extends StatelessWidget {
               return audio;
             },
             dispose: (context, audio) => audio.dispose(),
-            // Ensures that music starts immediately.
             lazy: false,
           ),
         ],
