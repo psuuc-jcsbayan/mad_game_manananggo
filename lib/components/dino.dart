@@ -4,7 +4,7 @@ import 'constants.dart';
 import '../screens/game_object.dart';
 import 'sprite.dart';
 
-List<Sprite> dino = [
+List<Sprite> dinoNight = [
   Sprite()
     ..imagePath = "assets/images/m/m1.png"
     ..imageWidth = 92
@@ -31,6 +31,16 @@ List<Sprite> dino = [
     ..imageHeight = 100,
 ];
 
+
+List<Sprite> dinoDay = [
+  Sprite()
+    ..imagePath = "assets/images/eagle.gif"
+    ..imageWidth = 92
+    ..imageHeight = 100,
+  
+];
+
+
 enum DinoState {
   jumping,
   running,
@@ -38,10 +48,13 @@ enum DinoState {
 }
 
 class Dino extends GameObject {
-  Sprite currentSprite = dino[0];
+  Sprite currentSprite;
   double dispY = 0;
   double velY = 0;
   DinoState state = DinoState.running;
+  bool isNight = false;
+
+  Dino() : currentSprite = dinoDay[0]; // Initialize with day sprites
 
   @override
   Widget render() {
@@ -62,17 +75,16 @@ class Dino extends GameObject {
   void update(Duration lastUpdate, Duration? elapsedTime) {
     double elapsedTimeSeconds;
     try {
-      currentSprite = dino[(elapsedTime!.inMilliseconds / 100).floor() % 2 + 2];
+      List<Sprite> currentDinoSprites = isNight ? dinoNight : dinoDay;
+      currentSprite = currentDinoSprites[(elapsedTime!.inMilliseconds / 100).floor() % currentDinoSprites.length];
     } catch (_) {
-      currentSprite = dino[0];
+      currentSprite = isNight ? dinoNight[0] : dinoDay[0];
     }
-    try{
+    try {
       elapsedTimeSeconds = (elapsedTime! - lastUpdate).inMilliseconds / 1000;
-    }
-    catch(_){
+    } catch (_) {
       elapsedTimeSeconds = 0;
     }
-    
 
     dispY += velY * elapsedTimeSeconds;
     if (dispY <= 0) {
@@ -92,13 +104,9 @@ class Dino extends GameObject {
   }
 
   void die() {
-    currentSprite = dino[5];
+    currentSprite = isNight ? dinoNight[5] : dinoDay[0]; // dead sprite
     state = DinoState.dead;
   }
+
 }
-
-
-
-
-
 

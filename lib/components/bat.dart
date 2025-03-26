@@ -25,7 +25,7 @@ class Ptera extends GameObject {
   @override
   Rect getRect(Size screenSize, double runDistance) {
     return Rect.fromLTWH(
-        (worldLocation.dx - runDistance) * worlToPixelRatio,
+        (worldLocation.dx - runDistance) * worldToPixelRatio,
         2 / 4 * screenSize.height -
             pteraFrames[frame].imageHeight -
             worldLocation.dy,

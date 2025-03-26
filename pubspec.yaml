@@ -68,7 +68,7 @@ flutter:
     - assets/images/cacti/
     - assets/images/bat/
     - assets/images/m/
-    - assets/image/cat/
+    - assets/images/cat/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -34,7 +34,7 @@ class Cloud extends GameObject {
   @override
   Rect getRect(Size screenSize, double runDistance) {
     return Rect.fromLTWH(
-      (worldLocation.dx - runDistance) * worlToPixelRatio / 5,
+      (worldLocation.dx - runDistance) * worldToPixelRatio / 5,
       screenSize.height / 2 - sprite.imageHeight - worldLocation.dy,
       sprite.imageWidth.toDouble(),
       sprite.imageHeight.toDouble(),

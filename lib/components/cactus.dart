@@ -27,13 +27,13 @@ List<Sprite> cacti = [
 
   Sprite()
     ..imagePath = "assets/images/ch3.png"
-    ..imageWidth = 100
-    ..imageHeight = 80,
+    ..imageWidth = 80
+    ..imageHeight = 70,
 
   Sprite()
     ..imagePath = "assets/images/ch4.png"
-    ..imageWidth = 100
-    ..imageHeight = 80,
+    ..imageWidth = 80
+    ..imageHeight = 70,
 ];
 
 class Cactus extends GameObject {
@@ -46,7 +46,7 @@ class Cactus extends GameObject {
   @override
   Rect getRect(Size screenSize, double runDistance) {
     return Rect.fromLTWH(
-      (worldLocation.dx - runDistance) * worlToPixelRatio,
+      (worldLocation.dx - runDistance) * worldToPixelRatio,
       screenSize.height / 1.43 - sprite.imageHeight,
       sprite.imageWidth.toDouble(),
       sprite.imageHeight.toDouble(),

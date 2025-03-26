@@ -51,6 +51,14 @@ This mythological creature symbolizes the rich, spooky stories passed down throu
                     ),
                     textAlign: TextAlign.justify,
                   ),
+                  Text('''Disclaimer: The developer does not claim ownership or rights to any copyrighted material used in the game, including but not limited to images, sound effects, and background music. 
+                  All credits goes to the right owner. ''',
+                  style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
                   const SizedBox(height: 30),
                   ElevatedButton(
                     onPressed: () => Navigator.pop(context),
