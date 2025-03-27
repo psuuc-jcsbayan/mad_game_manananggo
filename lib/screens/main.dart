@@ -350,7 +350,7 @@ class _MyHomePageState extends State<MyHomePage>
           image: DecorationImage(
             image: AssetImage(isNightTime
                 ? 'assets/images/bgs12.png'
-                : 'assets/images/bgs6.png'),
+                : 'assets/images/bgsw.png'),
             fit: BoxFit.cover,
             colorFilter: isNightTime
                 ? const ColorFilter.mode(Colors.black54, BlendMode.darken)
